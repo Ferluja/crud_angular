@@ -1,0 +1,47 @@
+<p>directiva works!</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Borrar</th>
+        <th>Seleccionar</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let articulos of inventario">
+            <td>{{articulos.id }}</td>
+            <td>{{articulos.nombre}}</td>
+            <td>{{articulos.precio}}</td>
+            <td><button (click)="eliminar(articulos.id)" class="btn btn-danger">Borrar</button></td>
+            <td><button (click)="seleccionar(articulos)" class="btn btn-info">Seleccionar</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row p-1 mx-auto">
+    <p>
+        <label for="id" class="input-group-text">Id</label>
+        <input type="number" [(ngModel)]="formulario.id" class="form-control" aria-describedby="basic-addon1">
+    </p>
+    <p>
+        <label for="Nombre" class="input-group-text">Nombre</label>
+        <input type="text" [(ngModel)]="formulario.nombre" class="form-control" aria-describedby="basic-addon1">
+    </p>
+    <p>
+        <label for="Precio" class="input-group-text">Precio</label>
+        <input type="number" [(ngModel)]="formulario.precio" class="form-control" aria-describedby="basic-addon1">
+    </p>
+</div>
+<div class="row p-1 mx-auto">
+    <button (click)="agregar()" class="btn btn-primary">Agregar</button>
+    &nbsp;&nbsp;<button (click)="editar(formulario.id)" class="btn btn-warning">Editar</button>
+</div>
+    
+
+
+
+
+
+
